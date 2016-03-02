@@ -1,4 +1,4 @@
-; ((window) => {
+; ((qiniuUpload) => {
   'use strict';
   var CryptoJS = window.CryptoJS;
   /**
@@ -165,5 +165,8 @@
     var upToken = `${accessKey}:${safe64(encodedSigned) }:${encoded}`;
     return upToken;
   };
-  window.genUpToken = genUpToken;
-})(window);
+  
+  //导出到qiniuUpload
+  qiniuUpload.genUpToken = genUpToken;
+  
+})(window.qiniuUpload);
